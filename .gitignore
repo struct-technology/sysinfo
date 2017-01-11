@@ -1,0 +1,19 @@
+# OS generated files #
+######################
+.DS_Store*
+ehthumbs.db
+Thumbs.db
+
+# Compiled source and backup files #
+######################
+*.pyc
+*.bak
+
+# Local project files #
+######################
+_ignore
+local_settings.*
+temp.db
+.idea
+www
+cache/
