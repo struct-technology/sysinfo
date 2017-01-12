@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from .context import server
+from .context import sysinfo_client
 
 import unittest
 
@@ -9,7 +9,7 @@ class AdvancedTestSuite(unittest.TestCase):
     """Advanced test cases."""
 
     def test_thoughts(self):
-        server.hmm()
+        sysinfo_client.hmm()
 
 
 if __name__ == '__main__':

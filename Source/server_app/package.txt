@@ -1,0 +1,1 @@
+../client_app/dist/sysinfo_client_app-0.0.1.tar.gz

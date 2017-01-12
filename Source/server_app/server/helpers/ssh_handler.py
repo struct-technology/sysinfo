@@ -73,7 +73,7 @@ class SSHClientHandler(object):
             except Exception, e:
                 print 'Unexpected error to execute command \'%s\' into \'%s:%s\':' % (command, self.ip, self.port), e
             finally:
-                return result
+                return u''.join(result)
         else:
             self.connect()
 
@@ -82,3 +82,9 @@ class SSHClientHandler(object):
             print 'Trying to reconnect #%d to \'%s:%s\'' % (max_tries, self.ip, self.port)
             # Recursion to try reconnect max_tries countdown times
             return self.run_command(command, max_tries=max_tries - 1)
+
+    def send_file(self, local_path, remote_path):
+        sftp = self.ssh_client.open_sftp()
+        sftp.put(local_path, remote_path)
+        sleep(1)
+        sftp.close()
